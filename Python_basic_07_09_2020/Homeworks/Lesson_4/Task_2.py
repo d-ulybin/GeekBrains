@@ -2,16 +2,6 @@
 значения которых больше предыдущего элемента.
 """
 
-while True:
-    user_list = (input('Вводите целые числа через запятую: ')).split(',')
-    try:
-        for ind, number in enumerate(user_list):
-            user_list[ind] = int(number)
-        break
-    except ValueError:
-        print('Введены не числа')
-        continue
-
 
 def list_changer(some_list: list) -> list:
     """
@@ -22,6 +12,16 @@ def list_changer(some_list: list) -> list:
     result_list = [num for i, num in enumerate(some_list) if some_list[i] > some_list[i - 1] and i != 0]
     return result_list
 
+
+while True:
+    user_list = (input('Вводите целые числа через запятую: ')).split(',')
+    try:
+        for ind, number in enumerate(user_list):
+            user_list[ind] = int(number)
+        break
+    except ValueError:
+        print('Введены не числа')
+        continue
 
 print(list_changer(user_list))
 
