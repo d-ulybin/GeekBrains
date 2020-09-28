@@ -19,8 +19,11 @@ for line in content:
         if item.isdigit():
             salary[temp[0]] = float(item)
 
+value_sum = 0
 for key, value in salary.items():
+    value_sum += value
     if value < 20000:
         print(key)
 
+print(f'Средняя зарплата сотрудников {value_sum / len(salary)}')
 
