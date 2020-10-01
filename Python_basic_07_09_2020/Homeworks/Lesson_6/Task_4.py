@@ -12,11 +12,10 @@
 
 
 class Car:
-    def __init__(self, speed, color, name, is_police):
+    def __init__(self, speed, color, name):
         self.speed = speed
         self.color = color
         self.name = name
-        self.is_police = is_police
 
     def go(self):
         return f'{self.name} поехала'
@@ -32,10 +31,10 @@ class Car:
 
 
 class TownCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name)
-        self.is_police = False
+    is_police = False
 
+    def __init__(self, speed, color, name):
+        super().__init__(speed, color, name)
 
     def show_speed(self):
         return f'Скорость {self.name} - {self.speed}' \
@@ -43,16 +42,17 @@ class TownCar(Car):
 
 
 class SportCar(Car):
-    def __init__(self, speed, color, name, is_police):
-        super().__init__(speed, color, name)
-        self.is_police = False
+    is_police = False
 
+    def __init__(self, speed, color, name):
+        super().__init__(speed, color, name)
 
 
 class WorkCar(Car):
-    def __init__(self, speed, color, name, is_police):
+    is_police = False
+
+    def __init__(self, speed, color, name):
         super().__init__(speed, color, name)
-        self.is_police = False
 
     def show_speed(self):
         return f'Скорость {self.name} - {self.speed}' \
@@ -60,9 +60,10 @@ class WorkCar(Car):
 
 
 class PoliceCar(Car):
-    def __init__(self, speed, color, name, is_police):
+    is_police = True
+
+    def __init__(self, speed, color, name):
         super().__init__(speed, color, name)
-        self.is_police = True
 
 
 if __name__ == '__main__':
